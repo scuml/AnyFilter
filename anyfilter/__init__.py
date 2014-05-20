@@ -140,7 +140,7 @@ class Filter(object):
             suffix = key.split(key_prefix)[-1]
 
             key = data["{0}{1}".format(key_prefix, suffix)].strip()
-            val = data["{0}{1}".format(val_prefix, suffix)].strip()
+            val = data.get("{0}{1}".format(val_prefix, suffix),'').strip()
 
             config[key] = val
 
